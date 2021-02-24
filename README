@@ -1,0 +1,3 @@
+Build example:
+    cmake -S . -B build
+    cmake --build build/

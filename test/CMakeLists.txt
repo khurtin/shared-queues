@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.19)
+find_package(GTest REQUIRED)
+FILE(GLOB SOURCES *.cpp)
+add_executable(shared-queues-tests ${SOURCES})
+target_link_libraries(shared-queues-tests PRIVATE shared-queues)
+target_link_libraries(shared-queues-tests PRIVATE GTest::GTest)
+target_link_libraries(shared-queues-tests PRIVATE GTest::Main)
+add_custom_target(check ALL COMMAND shared-queues-tests)
